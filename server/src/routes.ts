@@ -1,122 +1,15 @@
 import express from 'express';
-import db from './database/connection';
-import ConvertHoursToMinutes from './utils/ConvertHoursToMinutes';
+import ClassesController from './controllers/ClassesController';
+import ConnectionsController from './controllers/ConnectionsController';
 
 const routes = express.Router();
+const classesController = new ClassesController(); 
+const connectionsController = new ConnectionsController();
 
-interface ScheduleItem {
-    week_day: number;
-    from: string;
-    to: string;
-}
+routes.get('/classes', classesController.index);
+routes.post('/classes', classesController.create);
 
-routes.post('/classes', async (request, response) => {
-
-    const {name, avatar, whatsapp, bio, subject, cost, schedule } = request.body;
-
-    const trx = await db.transaction();  
-
-    try {
-
-        console.log(request.body);
-
-        const insertedUsersId = await trx('users').insert({
-            name, 
-            avatar, 
-            whatsapp, 
-            bio,
-        });
-    
-        const user_id = insertedUsersId[0];
-    
-        const insertedClassesId = await trx('classes').insert({
-            subject, 
-            cost,
-            user_id,
-        })
-    
-        const class_id = insertedClassesId[0];
-    
-        const classSchedule = schedule.map((scheduleItem: ScheduleItem)=> {
-            return {
-                class_id,
-                week_day: scheduleItem.week_day,
-                from: ConvertHoursToMinutes(scheduleItem.from),
-                to: ConvertHoursToMinutes(scheduleItem.to),
-            };
-        });
-    
-        await trx('schedule').insert(classSchedule);
-    
-        await trx.commit();
-
-        return response.status(201).send();
-
-    }catch (err) {
-
-        await trx.rollback();
-
-        console.log("error");
-
-        return response.status(400).json({
-            error: "Unexpected error"
-        });
-    }
-});
-
-
-routes.post('/classes', async (request, response) => {
-
-    const {name, avatar, whatsapp, bio, subject, cost, schedule } = request.body;
-
-    const trx = await db.transaction();  
-
-    try {
-
-        console.log(request.body);
-
-        const insertedUsersId = await trx('users').insert({
-            name, 
-            avatar, 
-            whatsapp, 
-            bio,
-        });
-    
-        const user_id = insertedUsersId[0];
-    
-        const insertedClassesId = await trx('classes').insert({
-            subject, 
-            cost,
-            user_id,
-        })
-    
-        const class_id = insertedClassesId[0];
-    
-        const classSchedule = schedule.map((scheduleItem: ScheduleItem)=> {
-            return {
-                class_id,
-                week_day: scheduleItem.week_day,
-                from: ConvertHoursToMinutes(scheduleItem.from),
-                to: ConvertHoursToMinutes(scheduleItem.to),
-            };
-        });
-    
-        await trx('schedule').insert(classSchedule);
-    
-        await trx.commit();
-
-        return response.status(201).send();
-
-    }catch (err) {
-
-        await trx.rollback();
-
-        console.log("error");
-
-        return response.status(400).json({
-            error: "Unexpected error"
-        });
-    }
-});
+routes.get('/connections', connectionsController.index);
+routes.post('/connections', connectionsController.create);
 
 export default routes;

@@ -7,15 +7,14 @@ export async function up(knex: Knex) {
         table.string('cost').notNullable();
 
         table.integer('user_id')
-            .notNullable()
-            .references('id')
-            .inTable('users')
-            .onDelete('CASCADE')
-            .onUpdate('CASCADE');
+        .notNullable()
+        .references('id')
+        .inTable('users')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE');
     });
 }
 
-
 export async function down(knex: Knex) {
-    return knex.schema.dropTable('classes');
+    return knex.schema.dropTable('classes')
 }
