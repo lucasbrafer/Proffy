@@ -59,7 +59,7 @@ O **Proffy** foi desenvolvido para facilitar a comunicação entre alunos e prof
   $ yarn start # ou npm start
 ```
 
-4. Executando a Aplicação mobile:
+4. Executando a Aplicação Mobile:
 
 ```sh
   # Diretório Mobile
