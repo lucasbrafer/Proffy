@@ -8,10 +8,10 @@
   <img alt="interface" width="600px" src="./github_files/mockup.png" />
 <p>
 
-## Sobre
+## Sobre 💡
 O **Proffy** foi desenvolvido para facilitar a comunicação entre alunos e professores particulares onde os professores possam cadastrar sua disciplina, disponibilidade de horário, valor da hora e também fornecer o seu contato para que possa ser exibido para os alunos nos filtros de busca.
 
-## Tecnologias
+## Tecnologias 🛠️
 - [TypeScript](https://www.typescriptlang.org/)
 - [ReactJS](https://pt-br.reactjs.org/)
 - [React Native](https://reactnative.dev/)
@@ -20,7 +20,7 @@ O **Proffy** foi desenvolvido para facilitar a comunicação entre alunos e prof
 - [Axios](https://github.com/axios/axios)
 - [Expo](https://expo.io/)
 
-## Como Executar
+## Como Executar 🖥️
 
 - ### **Pré-requisitos**
 
@@ -71,5 +71,5 @@ O **Proffy** foi desenvolvido para facilitar a comunicação entre alunos e prof
 ```
 
 ## Licença
-Este projeto está sob a Licença [MIT](LICENSE.md)
+Este projeto está sob a Licença [MIT](LICENSE.md)<br/>
 <sup>Projeto desenvolvido com a tutoria de [Diego Fernandes](https://github.com/diego3g), da [Rocketseat](rocketseat.com.br).</sup>
