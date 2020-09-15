@@ -71,5 +71,5 @@ O **Proffy** foi desenvolvido para facilitar a comunicação entre alunos e prof
 ```
 
 ## Licença
-Este projeto está sob a Licença [MIT](LICENSE.md)<br/>
+Este projeto está sob a Licença [MIT](LICENSE.md)<br/> <br/>
 <sup>Projeto desenvolvido com a tutoria de [Diego Fernandes](https://github.com/diego3g), da [Rocketseat](rocketseat.com.br).</sup>
