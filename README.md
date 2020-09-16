@@ -9,7 +9,7 @@
 <p>
 
 ## Sobre 💡
-O **Proffy** foi desenvolvido para facilitar a comunicação entre alunos e professores particulares onde os professores possam cadastrar sua disciplina, disponibilidade de horário, valor da hora e também fornecer o seu contato para que possa ser exibido para os alunos nos filtros de busca.
+O **Proffy** foi desenvolvido para facilitar a comunicação entre alunos e professores particulares onde os professores possam cadastrar sua disciplina, disponibilidade de horário, valor da hora e também fornecer o seu contato para que possa ser exibido para os alunos nos filtros de busca
 
 ## Tecnologias 🛠️
 - [TypeScript](https://www.typescriptlang.org/)
